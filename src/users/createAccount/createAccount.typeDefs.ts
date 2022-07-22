@@ -1,14 +1,8 @@
 import { gql } from "apollo-server";
 
 export default gql`
-  type User {
-    id: Int!
-    firstName: String!
-    lastName: String
-    username: String!
-    createdAt: String!
-    updatedAt: String!
-  }
+  scalar Upload
+
   type Mutation {
     createAccount(
       firstName: String!
@@ -17,8 +11,5 @@ export default gql`
       email: String!
       password: String!
     ): User
-  }
-  type Query {
-    seeProfile(username: String!): User
   }
 `;
