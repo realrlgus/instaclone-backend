@@ -1,6 +1,6 @@
 import client from "../../client";
 import { Resolvers } from "src/types";
-import { protectedResolver } from "../users.utils";
+import { protectedResolver } from "../../utils";
 
 type FollowUserArgs = {
   username: string;

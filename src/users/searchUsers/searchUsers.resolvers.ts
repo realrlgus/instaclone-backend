@@ -1,4 +1,3 @@
-import client from "../../client";
 import { Resolvers } from "src/types";
 import { User } from "../users";
 
@@ -10,7 +9,11 @@ type SearchUsers = User[];
 
 const resolvers: Resolvers = {
   Query: {
-    searchUsers: async (_, { keyword }: Keyword): Promise<SearchUsers> => {
+    searchUsers: async (
+      _,
+      { keyword }: Keyword,
+      { client }
+    ): Promise<SearchUsers> => {
       const users = await client.user.findMany({
         where: {
           username: {

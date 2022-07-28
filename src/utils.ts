@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import { Resolver } from "src/types";
-import client from "../client";
+import client from "./client";
 
 type UserPayload = {
   id: number;

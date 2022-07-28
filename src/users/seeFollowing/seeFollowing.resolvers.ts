@@ -1,4 +1,3 @@
-import client from "../../client";
 import { Resolvers } from "src/types";
 import { User } from "../users";
 import { TAKE } from "../../constants/users";
@@ -18,7 +17,8 @@ const resolver: Resolvers = {
   Query: {
     seeFollowing: async (
       _,
-      { username, lastId }: SeeFollowingArgs
+      { username, lastId }: SeeFollowingArgs,
+      { client }
     ): Promise<SeeFollowingResult> => {
       try {
         const isExistUser = await client.user.findUnique({

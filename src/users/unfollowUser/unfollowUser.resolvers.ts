@@ -1,6 +1,6 @@
 import client from "../../client";
 import { Resolvers } from "src/types";
-import { protectedResolver } from "../users.utils";
+import { protectedResolver } from "../../utils";
 
 type UnfollowUserArgs = {
   username: string;
@@ -43,7 +43,7 @@ const resolvers: Resolvers = {
           return {
             ok: true,
           };
-        } catch (e: any) {
+        } catch (e) {
           return {
             ok: false,
             error: e.message,

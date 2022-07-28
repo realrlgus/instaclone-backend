@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import { createWriteStream } from "fs";
 import { GraphQLUpload } from "graphql-upload/GraphQLUpload.js";
 import { Resolvers } from "src/types";
-import { protectedResolver } from "../users.utils";
+import { protectedResolver } from "../../utils";
 
 type EditProfileArgs = {
   firstName?: string;
